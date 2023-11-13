@@ -13,7 +13,7 @@ REQUIREMENTS = [
     'django-fsm-admin',
     'djangorestframework>=3.9,<4',
     'django-rest-auth',
-    'django-angular>=2.3.1',
+    'django-angular @ git+https://github.com/jrief/django-angular',
     'Django-Select2',
     'django-rest-auth',
     'django-admin-sortable2',
