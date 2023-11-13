@@ -6,7 +6,7 @@ with open('README.md', 'r') as fh:
     long_description = fh.read()
 
 REQUIREMENTS = [
-    'Django>=2.1,<3.1',
+    'Django>=2.1,<4',
     'django-filer>=1.7',
     'django-ipware',
     'django-fsm>=2.7',
@@ -20,7 +20,7 @@ REQUIREMENTS = [
     'django-formtools',
     'django_polymorphic',
     'django-post_office',
-    'django-cms>=3.7',
+    'django-cms>=3.11',
     'djangocms-cascade>=1.3,<2',
 ]
 
