@@ -18,6 +18,7 @@ class JSONSerializerField(serializers.Field):
     Serializer field which transparently bypasses its object instead of serializing/deserializing.
     """
     def __init__(self, encoder=None, **kwargs):
+        del kwargs['decoder'] # Hack that makes shop work with Django 3.2.
         super().__init__(**kwargs)
 
     def to_representation(self, obj):
