@@ -74,6 +74,12 @@ def transition_change_notification(order):
         attachments = {}
         for notiatt in notification.notificationattachment_set.all():
             attachments[notiatt.attachment.original_filename] = notiatt.attachment.file.file
+
+        # This is necessary to have translations translated
+        from django.core.serializers.json import DjangoJSONEncoder
+        import json
+        context_hacked = json.loads(json.dumps(context, cls=DjangoJSONEncoder))
+            
         mail.send(recipient, template=template, context=context,
                   attachments=attachments, render_on_delivery=True)
         emails_in_queue = True
