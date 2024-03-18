@@ -80,7 +80,7 @@ def transition_change_notification(order):
         import json
         context_hacked = json.loads(json.dumps(context, cls=DjangoJSONEncoder))
             
-        mail.send(recipient, template=template, context=context,
+        mail.send(recipient, template=template, context=context_hacked,
                   attachments=attachments, render_on_delivery=True)
         emails_in_queue = True
     if emails_in_queue:
